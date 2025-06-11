@@ -252,7 +252,6 @@ export function Skills() {
   const filtered =
     filter === "All" ? techs : techs.filter((t) => t.category === filter);
 
-  // For grid height stability, estimate max rows (6 cols max, 14 items max)
   const minGridHeight =
     "min-h-[220px] sm:min-h-[320px] md:min-h-[220px] xl:min-h-[160px]";
 
@@ -300,7 +299,7 @@ export function Skills() {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <span className="flex items-center justify-center w-12 h-12 rounded-full bg-surface/80 shadow-subtle group-hover:shadow-3d transition-all duration-300">
-                        <tech.icon className="h-6 w-6 text-neutral-400 dark:text-neutral-600 group-hover:text-black dark:group-hover:text-white transition-all duration-300" />
+                        <tech.icon className="h-6 w-6 text-muted-foreground group-hover:text-foreground transition-all duration-300" />
                       </span>
                     </TooltipTrigger>
                     <TooltipContent className="text-xs max-w-xs text-center">

@@ -78,14 +78,33 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   :root {
     color-scheme: light dark;
+    /* Theme transition configuration */
+    --theme-transition-duration: 300ms;
+    --theme-transition-timing: cubic-bezier(0.16, 1, 0.3, 1); /* Custom easing for smoother motion */
+    
+    /* Only transition the most essential properties */
+    transition: 
+      --background var(--theme-transition-duration) var(--theme-transition-timing),
+      --foreground var(--theme-transition-duration) var(--theme-transition-timing),
+      --card var(--theme-transition-duration) var(--theme-transition-timing),
+      --card-foreground var(--theme-transition-duration) var(--theme-transition-timing),
+      --primary var(--theme-transition-duration) var(--theme-transition-timing),
+      --primary-foreground var(--theme-transition-duration) var(--theme-transition-timing),
+      --secondary var(--theme-transition-duration) var(--theme-transition-timing),
+      --secondary-foreground var(--theme-transition-duration) var(--theme-transition-timing),
+      --muted var(--theme-transition-duration) var(--theme-transition-timing),
+      --muted-foreground var(--theme-transition-duration) var(--theme-transition-timing),
+      --accent var(--theme-transition-duration) var(--theme-transition-timing),
+      --accent-foreground var(--theme-transition-duration) var(--theme-transition-timing),
+      --border var(--theme-transition-duration) var(--theme-transition-timing);
   }
 }
 
@@ -218,11 +237,8 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+* {
+  transition: background-color var(--theme-transition-duration)
+      var(--theme-transition-timing),
+    color var(--theme-transition-duration) var(--theme-transition-timing);
 }

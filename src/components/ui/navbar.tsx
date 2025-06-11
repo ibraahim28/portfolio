@@ -213,7 +213,7 @@ export function Navbar() {
                   }}
                   transition={{ 
                     duration: 0.2,
-                    ease: "easeInOut"
+                    ease: [0.4, 0, 0.2, 1]
                   }}
                 >
                   <ThemeToggleIcon />
@@ -266,7 +266,7 @@ export function Navbar() {
                 }}
                 transition={{ 
                   duration: 0.2,
-                  ease: "easeInOut"
+                  ease: [0.4, 0, 0.2, 1]
                 }}
               >
                 <ThemeToggleIcon />

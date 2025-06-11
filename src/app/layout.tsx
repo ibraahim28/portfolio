@@ -19,14 +19,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className="transition-colors duration-300">
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="min-h-screen bg-background text-foreground">
+          <ClientWrapper>
             <Navbar />
-            <ClientWrapper>{children}</ClientWrapper>
-            <Toaster />
-          </div>
+            {children}
+          </ClientWrapper>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
